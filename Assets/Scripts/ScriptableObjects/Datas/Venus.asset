@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetName: 
   sizeProportion: 0
-  parentPlanet: {fileID: 0}
+  parentPlanet: {fileID: 11400000, guid: ac628f842315cde8c9975a77d67aea45, type: 2}
   distanceFromParentProportion: 0
   orbitSpeedProportion: 0
   selfTurnSpeedProportion: 0

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6513a2712595ec3a2b54cf1a9a0858a2, type: 3}
   m_Name: Moon
   m_EditorClassIdentifier: 
-  planetName: 
-  sizeProportion: 0
-  parentPlanet: {fileID: 0}
-  distanceFromParentProportion: 0
-  orbitSpeedProportion: 0
-  selfTurnSpeedProportion: 0
+  planetName: Moon
+  sizeProportion: 1
+  parentPlanet: {fileID: 11400000, guid: 89d655fcf27d69a5099bc933ed4475d6, type: 2}
+  distanceFromParentProportion: 1
+  orbitSpeedProportion: 1
+  selfTurnSpeedProportion: 1

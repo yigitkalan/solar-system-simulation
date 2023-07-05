@@ -12,3 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6513a2712595ec3a2b54cf1a9a0858a2, type: 3}
   m_Name: Sun
   m_EditorClassIdentifier: 
+  planetName: Sun
+  sizeProportion: 40
+  parentPlanet: {fileID: 11400000}
+  distanceFromParentProportion: 0
+  orbitSpeedProportion: 0
+  selfTurnSpeedProportion: 0
