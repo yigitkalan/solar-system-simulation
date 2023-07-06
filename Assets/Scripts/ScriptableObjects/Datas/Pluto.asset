@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Pluto
   m_EditorClassIdentifier: 
   planetName: Pluto
-  sizeProportion: 2
+  sizeProportion: 4
   parentPlanet: {fileID: 11400000, guid: ac628f842315cde8c9975a77d67aea45, type: 2}
   distanceFromParentProportion: 40
-  orbitSpeedProportion: 26
+  orbitSpeedProportion: 4
   selfTurnSpeedProportion: 3

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6513a2712595ec3a2b54cf1a9a0858a2, type: 3}
   m_Name: Uranus
   m_EditorClassIdentifier: 
-  planetName: 
-  sizeProportion: 0
+  planetName: Uranus
+  sizeProportion: 22
   parentPlanet: {fileID: 11400000, guid: ac628f842315cde8c9975a77d67aea45, type: 2}
-  distanceFromParentProportion: 0
-  orbitSpeedProportion: 0
-  selfTurnSpeedProportion: 0
+  distanceFromParentProportion: 30
+  orbitSpeedProportion: 7
+  selfTurnSpeedProportion: 24

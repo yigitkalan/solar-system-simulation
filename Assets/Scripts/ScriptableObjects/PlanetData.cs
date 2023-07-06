@@ -7,7 +7,7 @@ public class PlanetData : ScriptableObject
     public int sizeProportion;
 
     public PlanetData parentPlanet;
-    public int distanceFromParentProportion;
+    public float distanceFromParentProportion;
     public int orbitSpeedProportion;
     public int selfTurnSpeedProportion;
 }

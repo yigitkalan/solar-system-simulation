@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Jupiter
   m_EditorClassIdentifier: 
   planetName: jupiter
-  sizeProportion: 20
+  sizeProportion: 30
   parentPlanet: {fileID: 11400000, guid: ac628f842315cde8c9975a77d67aea45, type: 2}
-  distanceFromParentProportion: 30
-  orbitSpeedProportion: 18
+  distanceFromParentProportion: 16
+  orbitSpeedProportion: 13
   selfTurnSpeedProportion: 32

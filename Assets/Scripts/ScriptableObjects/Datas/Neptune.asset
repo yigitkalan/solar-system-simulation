@@ -15,6 +15,6 @@ MonoBehaviour:
   planetName: Neptune
   sizeProportion: 14
   parentPlanet: {fileID: 11400000, guid: ac628f842315cde8c9975a77d67aea45, type: 2}
-  distanceFromParentProportion: 22
-  orbitSpeedProportion: 22
+  distanceFromParentProportion: 35
+  orbitSpeedProportion: 5
   selfTurnSpeedProportion: 24

@@ -15,6 +15,6 @@ MonoBehaviour:
   planetName: Mars
   sizeProportion: 10
   parentPlanet: {fileID: 11400000, guid: ac628f842315cde8c9975a77d67aea45, type: 2}
-  distanceFromParentProportion: 10
-  orbitSpeedProportion: 16
+  distanceFromParentProportion: 8
+  orbitSpeedProportion: 24
   selfTurnSpeedProportion: 12

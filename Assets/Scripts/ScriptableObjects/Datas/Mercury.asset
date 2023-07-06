@@ -15,6 +15,6 @@ MonoBehaviour:
   planetName: Mercury
   sizeProportion: 4
   parentPlanet: {fileID: 11400000, guid: ac628f842315cde8c9975a77d67aea45, type: 2}
-  distanceFromParentProportion: 4
-  orbitSpeedProportion: 10
+  distanceFromParentProportion: 3
+  orbitSpeedProportion: 40
   selfTurnSpeedProportion: 5

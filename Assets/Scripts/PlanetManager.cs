@@ -17,11 +17,9 @@ public class PlanetManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.localScale = Vector3.one * _planetData.sizeProportion;
 
         parent = GameObject.Find(_planetData.parentPlanet.name);
-
-        transform.position =  parent.transform.position + new Vector3(
+        transform.position = parent.transform.position + new Vector3(
             0, 0, _planetData.distanceFromParentProportion * distanceMultiplier);
 
         Observable.EveryUpdate()
@@ -31,6 +29,10 @@ public class PlanetManager : MonoBehaviour
                     transform.RotateAround(parent.transform.position, Vector3.up,
                                        _planetData.orbitSpeedProportion *
                                            speedMultiplier * Time.deltaTime);
+
+
+                    transform.localScale = Vector3.one * _planetData.sizeProportion / transform.parent.localScale.x;
+
                 })
             .AddTo(this);
     }

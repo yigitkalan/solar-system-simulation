@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Saturn
   m_EditorClassIdentifier: 
   planetName: Saturn
-  sizeProportion: 16
+  sizeProportion: 28
   parentPlanet: {fileID: 11400000, guid: ac628f842315cde8c9975a77d67aea45, type: 2}
-  distanceFromParentProportion: 30
-  orbitSpeedProportion: 18
-  selfTurnSpeedProportion: 32
+  distanceFromParentProportion: 24
+  orbitSpeedProportion: 9
+  selfTurnSpeedProportion: 30
