@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7278579238243645384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 333542963358491173}
+  - component: {fileID: 2947830629141750870}
+  m_Layer: 0
+  m_Name: Moon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &333542963358491173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7278579238243645384}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 151579082251428537}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2947830629141750870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7278579238243645384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48cdcf7e033297c1dbd71754ab926a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _planetData: {fileID: 11400000, guid: c372d8e790368b04f8b593fee8e224af, type: 2}
+  speedMultiplier: 0.2
+--- !u!1001 &1392672426038674419
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 333542963358491173}
+    m_Modifications:
+    - target: {fileID: 1245597613445456202, guid: d26617429c3d46053905e18a1441e407,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1245597613445456202, guid: d26617429c3d46053905e18a1441e407,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -441.55704
+      objectReference: {fileID: 0}
+    - target: {fileID: 1245597613445456202, guid: d26617429c3d46053905e18a1441e407,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1245597613445456202, guid: d26617429c3d46053905e18a1441e407,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -354.76974
+      objectReference: {fileID: 0}
+    - target: {fileID: 1245597613445456202, guid: d26617429c3d46053905e18a1441e407,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1245597613445456202, guid: d26617429c3d46053905e18a1441e407,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1245597613445456202, guid: d26617429c3d46053905e18a1441e407,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1245597613445456202, guid: d26617429c3d46053905e18a1441e407,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1245597613445456202, guid: d26617429c3d46053905e18a1441e407,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1245597613445456202, guid: d26617429c3d46053905e18a1441e407,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1245597613445456202, guid: d26617429c3d46053905e18a1441e407,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2362412383716219730, guid: d26617429c3d46053905e18a1441e407,
+        type: 3}
+      propertyPath: m_Name
+      value: MoonBody
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2362412383716219730, guid: d26617429c3d46053905e18a1441e407,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 121503827976337498}
+  m_SourcePrefab: {fileID: 100100000, guid: d26617429c3d46053905e18a1441e407, type: 3}
+--- !u!4 &151579082251428537 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1245597613445456202, guid: d26617429c3d46053905e18a1441e407,
+    type: 3}
+  m_PrefabInstance: {fileID: 1392672426038674419}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3718633789533444257 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2362412383716219730, guid: d26617429c3d46053905e18a1441e407,
+    type: 3}
+  m_PrefabInstance: {fileID: 1392672426038674419}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &121503827976337498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3718633789533444257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfe38c576d3ba0aa589492e9ff0b8417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _planetData: {fileID: 11400000, guid: c372d8e790368b04f8b593fee8e224af, type: 2}
+  distanceMultiplier: 30
