@@ -32,8 +32,11 @@ public class SelfPlanetRotation : MonoBehaviour
     {
 
         // make this faster
+        //pick either 360 or -360 at random
+        int randomDirection = Random.Range(0, 2) * 2 - 1;
+
         selfRotateTween = transform
-                              .DORotate(new Vector3(0, 360, 0),
+                              .DORotate(new Vector3(0, 360*randomDirection, 0),
                                         _planetData.selfTurnSpeedProportion/2,
                                         RotateMode.FastBeyond360)
                               .SetEase(Ease.Linear)
