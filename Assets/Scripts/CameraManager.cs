@@ -1,29 +1,58 @@
 using System.Collections.Generic;
+using Cinemachine;
+using Lean.Touch;
 using UniRx;
 using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
     [SerializeField]
-    List<Cinemachine.CinemachineVirtualCamera> cameras =
-        new List<Cinemachine.CinemachineVirtualCamera>();
+    List<CinemachineVirtualCamera> cameras = new List<CinemachineVirtualCamera>();
+
+    CinemachineVirtualCamera currentVirtualCamera;
+    CinemachineComposer currentCamComposer;
 
     void Start()
     {
         // disable all cameras
-        cameras.ForEach(c => c.gameObject.SetActive(false));
-        cameras[0].gameObject.SetActive(true); // enable first camera]
+        cameras.ForEach(c => c.Priority = 0);
+        cameras[0].Priority = 1;
+        currentVirtualCamera = cameras[0];
+        currentCamComposer =
+            currentVirtualCamera.GetCinemachineComponent<CinemachineComposer>();
 
-        // change enabled camera when pressed 0-9
         Observable.EveryUpdate()
             .Where(
-                _ => Input.anyKey)
+                _ => GetPressed() != -1)
             .Subscribe(
                 _ => OnPlanetChanged(GetPressed()));
+
+        Observable.EveryUpdate().Subscribe(
+            _ => Zoom());
+
+        LeanTouch.OnFingerSwipe += (finger) =>
+        {
+            Vector2 swipe = finger.SwipeScreenDelta;
+            if (swipe.x > 0)
+            {
+                currentCamComposer.m_ScreenX -= 0.1f;
+            }
+            else if (swipe.x < 0)
+            {
+                currentCamComposer.m_ScreenX += 0.1f;
+            }
+            if (swipe.y > 0)
+            {
+                currentCamComposer.m_ScreenY -= 0.1f;
+            }
+            else if (swipe.y < 0)
+            {
+                currentCamComposer.m_ScreenY += 0.1f;
+            }
+        };
     }
     int GetPressed()
     {
-        //pressed from 0 to 9 with Input.GetKet(Keycode.Alpha0) to Input.GetKey(Keycode.Alpha9))
         for (int i = 0; i < 10; i++)
         {
             if (Input.GetKey(KeyCode.Alpha0 + i))
@@ -31,16 +60,29 @@ public class CameraManager : MonoBehaviour
                 return i;
             }
         }
-            return -1;
+        return -1;
     }
 
     void OnPlanetChanged(int planetIndex)
     {
-        cameras.ForEach(c =>
+        cameras.ForEach(c => { c.Priority = 0; });
+        cameras[planetIndex].Priority = 1;
+        currentVirtualCamera = cameras[planetIndex];
+        currentCamComposer =
+            currentVirtualCamera.GetCinemachineComponent<CinemachineComposer>();
+    }
+
+    void Zoom()
+    {
+        if (Input.GetKey(KeyCode.RightArrow) &&
+            currentVirtualCamera.m_Lens.FieldOfView > 5f)
         {
-            c.gameObject.SetActive(false);
-        });
-        print(planetIndex);
-        cameras[planetIndex].gameObject.SetActive(true);
+            currentVirtualCamera.m_Lens.FieldOfView -= 0.5f;
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow) &&
+                   currentVirtualCamera.m_Lens.FieldOfView < 100f)
+        {
+            { currentVirtualCamera.m_Lens.FieldOfView += 0.5f; }
+        }
     }
 }

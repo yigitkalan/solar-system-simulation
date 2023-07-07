@@ -16,7 +16,7 @@ public class OrbitalPlanetRotation : MonoBehaviour
     int distanceMultiplier = 30;
 
     [SerializeField]
-    float speedMultiplier = 0.2f;
+    float orbitalSpeedMultiplier = 0.2f;
 
     // Start is called before the first frame update
     void Start()
@@ -25,34 +25,35 @@ public class OrbitalPlanetRotation : MonoBehaviour
         parent = GameObject.Find(_planetData.parentPlanet.name);
 
         StartCoroutine(SetOrbitPosition());
-        
+
         Observable.EveryUpdate()
             .Subscribe(
-                _ =>
-                {
-                    OrbitRotation();
-                })
+                _ => { OrbitRotation(); })
             .AddTo(this);
     }
 
     void OrbitRotation()
     {
-        transform.RotateAround(parent.transform.position, Vector3.up,
-                               _planetData.orbitSpeedProportion *
-                                   speedMultiplier * Time.deltaTime);
+        transform.RotateAround(
+            parent.transform.position, Vector3.up,
+            _planetData.orbitSpeedProportion * orbitalSpeedMultiplier *
+                SpaceTimeManager.speedMultiplier * Time.deltaTime);
     }
 
     IEnumerator SetOrbitPosition()
     {
-        // Wait until parent is in position if current planet are in an inner systems
-        while(parent.name != systemCenterName && parent.transform.position.z < 10){
+        // Wait until parent is in position if current planet are in an inner
+        // systems
+        while (parent.name != systemCenterName &&
+               parent.transform.position.z < 10)
+        {
             yield return null;
         }
-        transform.position = parent.transform.position + new Vector3(0, 0,
+        transform.position = parent.transform.position +
+                             new Vector3(0, 0,
                                          _planetData.distanceFromParentProportion *
                                              distanceMultiplier);
 
         yield break;
-
     }
 }
