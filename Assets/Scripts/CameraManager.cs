@@ -30,26 +30,6 @@ public class CameraManager : MonoBehaviour
         Observable.EveryUpdate().Subscribe(
             _ => Zoom());
 
-        LeanTouch.OnFingerSwipe += (finger) =>
-        {
-            Vector2 swipe = finger.SwipeScreenDelta;
-            if (swipe.x > 0)
-            {
-                currentCamComposer.m_ScreenX -= 0.1f;
-            }
-            else if (swipe.x < 0)
-            {
-                currentCamComposer.m_ScreenX += 0.1f;
-            }
-            if (swipe.y > 0)
-            {
-                currentCamComposer.m_ScreenY -= 0.1f;
-            }
-            else if (swipe.y < 0)
-            {
-                currentCamComposer.m_ScreenY += 0.1f;
-            }
-        };
     }
     int GetPressed()
     {

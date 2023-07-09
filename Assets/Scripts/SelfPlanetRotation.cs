@@ -29,7 +29,6 @@ public class SelfPlanetRotation : MonoBehaviour
 
     void RotateSelf()
     {
-            print(SpaceTimeManager.speedMultiplier);
             selfRotateTween = transform
                                   .DORotate(new Vector3(0, _planetData.selfTurnSpeedProportion *
                                                 SpaceTimeManager.speedMultiplier, 0), 0.05f,
