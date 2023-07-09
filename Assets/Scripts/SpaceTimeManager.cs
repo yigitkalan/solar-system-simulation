@@ -9,18 +9,17 @@ public class SpaceTimeManager : MonoBehaviour
     public static float speedMultiplier;
 
     LeanPinchScale leanPinchScale;
+    void Awake(){
+        speedMultiplier = 1;
+    }
 
 
     void Start()
     {
 
-        // this.ObserveEveryValueChanged(x => speedMultiplier)
-        //     .Subscribe(u => Time.timeScale = u)
-        //     .AddTo(this);
-
         Observable.EveryUpdate()
-            .Subscribe(_ => GetInput())
-            .AddTo(this);
+            .Subscribe(_ => GetInput());
+
     }
 
     void GetInput()

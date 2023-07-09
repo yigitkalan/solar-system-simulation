@@ -9,9 +9,7 @@ public class SelfPlanetRotation : MonoBehaviour
 
     GameObject parent;
 
-    [SerializeField]
-    float selfRotateMultiplier = 0.5f;
-    Tweener selfRotateTween;
+    Tween selfRotateTween;
 
     // Start is called before the first frame update
     void Start()
@@ -22,25 +20,22 @@ public class SelfPlanetRotation : MonoBehaviour
 
         Observable.EveryUpdate()
             .Subscribe(
-                _ => { SetScale(); })
+                _ =>
+                {
+                    SetScale();
+                })
             .AddTo(this);
     }
 
     void RotateSelf()
     {
+            print(SpaceTimeManager.speedMultiplier);
+            selfRotateTween = transform
+                                  .DORotate(new Vector3(0, _planetData.selfTurnSpeedProportion *
+                                                SpaceTimeManager.speedMultiplier, 0), 0.05f,
+                                            RotateMode.FastBeyond360)
+                                  .SetLoops(-1, LoopType.Incremental);
 
-        // make this faster
-        // pick either 360 or -360 at random
-        int randomDirection = Random.Range(0, 2) * 2 - 1;
-
-        selfRotateTween = transform
-                              .DORotate(new Vector3(0, 360 * randomDirection, 0),
-                                        _planetData.selfTurnSpeedProportion *
-                                            selfRotateMultiplier *
-                                            SpaceTimeManager.speedMultiplier,
-                                        RotateMode.FastBeyond360)
-                              .SetEase(Ease.Linear)
-                              .SetLoops(-1);
     }
 
     void SetScale()

@@ -15,8 +15,7 @@ public class OrbitalPlanetRotation : MonoBehaviour
     [SerializeField]
     int distanceMultiplier = 30;
 
-    [SerializeField]
-    float orbitalSpeedMultiplier = 0.2f;
+    float orbitalSpeedMultiplier = 0.05f;
 
     // Start is called before the first frame update
     void Start()
